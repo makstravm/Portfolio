@@ -1,3 +1,20 @@
 body{
-  
+  @extend %montser-400;
+  font-size: 18px;
+  line-height: 32px;
+  color: #fff;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  50% {
+    opacity: .7;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
 }

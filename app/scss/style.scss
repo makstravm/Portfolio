@@ -1,13 +1,104 @@
-@import 'vars';
-@import 'fonts';
-@import 'reset';
-@import 'libs';
-@import 'global';
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
 
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+.header {
+  height: 100vh;
+  background-image: url(../images/1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 
-
-
-
-
-
-@import 'media';
+  &__inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+  }
+  &__title {
+    @extend %montser-700;
+    font-size: 2.5em;
+    margin-bottom: 25px;
+    line-height: 42px;
+  }
+  &__text {
+  }
+  span {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  &__box-img {
+    img {
+      height: 75vh;
+    }
+  }
+}
+.about {
+  background-image: url(../images/2.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+.menu {
+  position: fixed;
+  top: 0;
+  left: 50px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .menu__item {
+    margin: 15px 0;
+    &.active {
+      .menu__link {
+        @extend %montser-700;
+      }
+      span {
+        &::after,
+        &::before {
+          animation: pulse 1.5s linear infinite;
+        }
+      }
+    }
+  }
+  &__link {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    @extend %montser-400;
+    span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin-right: 15px;
+      position: relative;
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        border: 1px solid #fff;
+        left: -4px;
+        opacity: 0;
+        right: -4px;
+        top: -4px;
+        bottom: -4px;
+        border-radius: 50%;
+      }
+      &::after {
+        animation-delay: 0.75s;
+      }
+    }
+  }
+}
+@import "media";
