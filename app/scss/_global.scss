@@ -8,6 +8,7 @@ body {
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
+  height: 100vh;
 }
 
 .container {
@@ -22,6 +23,38 @@ body {
   letter-spacing: 1.7px;
   line-height: 52px;
   margin-bottom: 35px;
+}
+
+.btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  width: 45px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 7;
+  &:before,
+  &:after,
+  & div {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 3px;
+    border-radius: 3px;
+    margin: 7px 0;
+    transition: 0.5s;
+  }
+  &.active:before {
+    transform: translateY(12px) rotate(135deg);
+  }
+  &.active:after {
+    transform: translateY(-12px) rotate(-135deg);
+  }
+  &.active div {
+    transform: scale(0);
+  }
 }
 
 .form-modal {

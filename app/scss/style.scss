@@ -9,20 +9,18 @@
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-
+  min-height: 100vh;
   &__inner {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
   }
   &__title {
     @extend %montser-700;
     font-size: 52px;
     margin-bottom: 25px;
     line-height: 64px;
-  }
-  &__text {
   }
   span {
     display: block;
@@ -31,7 +29,7 @@
   }
   &__box-img {
     img {
-      height: 75vh;
+      height: 65vh;
     }
   }
 }
@@ -44,6 +42,18 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    background-color: transparent;
+    transition: all 0.3s;
+    &.dark-header {
+      background-color: rgba(#000, 0.7);
+    }
+  }
   .menu__item {
     margin: 0 25px;
     &.active {
@@ -97,7 +107,6 @@
 }
 
 .skill {
-  padding-top: 10%;
   padding-bottom: 50px;
   &__inner {
     display: grid;
@@ -126,7 +135,7 @@
 }
 
 .about {
-  padding-top: 10%;
+  padding-top: 75px;
   padding-bottom: 70px;
   &__text {
     letter-spacing: 1.2px;
@@ -138,12 +147,11 @@
 }
 
 .portfolio {
-  padding-top: 10%;
   padding-bottom: 70px;
   &__inner {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-    grid-gap: 25px;
+    grid-gap: 40px 25px;
   }
   &__item {
     max-width: 215px;
@@ -245,8 +253,12 @@
   background-position: center center;
   background-size: cover;
   height: 100vh;
-  padding-top: 15%;
-  padding-bottom: 70px;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
   &__title {
     margin-bottom: 50px;
   }
@@ -258,7 +270,7 @@
   &__connect,
   &__social {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-bottom: 50px;
   }
   &__connect-link {
