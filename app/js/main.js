@@ -3,6 +3,9 @@ $(function () {
   $('.btn, .menu__link').on('click', function () {
     $('.btn, .menu').toggleClass('active');
   });
+  $('.form-thank__close').on('click', function () {
+    $('.form-thank').removeClass('active');
+  });
 
   $(window).scroll(function () {
     var scroll = $(window).scrollTop();
@@ -19,4 +22,21 @@ $(function () {
     fitToSection:false,
     responsiveWidth: 1199
   });
+
+  	//E-mail Ajax Send
+	$("form").submit(function() { //Change
+		var th = $(this);
+		$.ajax({
+			type: "POST",
+			url: "mail.php", //Change
+			data: th.serialize()
+		}).done(function() {
+      $(".form-thank").addClass("active");
+			setTimeout(function() {
+				// Done Functions
+				th.trigger("reset");
+			}, 1000);
+		});
+		return false;
+	});
 });
