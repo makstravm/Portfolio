@@ -22,5 +22,7 @@
     "jquery": "^3.5.1",
     "swiper": "^6.5.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  }
 }
