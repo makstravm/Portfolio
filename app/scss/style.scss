@@ -148,14 +148,10 @@
 
 .portfolio {
   padding-bottom: 70px;
-  &__inner {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
-    grid-gap: 40px 25px;
-  }
   &__item {
-    max-width: 215px;
-    margin: 0 auto;
+    max-width: 300px;
+    margin: 0 auto 45px;
+    display: block !important;
     text-align: center;
   }
   &__box-img {
@@ -165,7 +161,7 @@
     z-index: 1;
     margin-bottom: 10px;
     img {
-      height: 300px;
+      height: 275px;
       object-fit: cover;
     }
     &:hover {
@@ -245,6 +241,51 @@
     text-decoration: none;
     line-height: 32px;
     color: #fff;
+  }
+}
+
+.slick-arrow {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(35%);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  img {
+    height: 40px;
+    width: 40px;
+  }
+}
+.slick-prev {
+  left: 0;
+}
+.slick-next {
+  right: 0;
+}
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  li {
+    margin: 0 15px;
+  }
+  button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    border-radius: 5px;
+    width: 35px;
+    height: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background-color: #ffffff;
+  }
+}
+.slick-active {
+  button {
+    background-color: #656565;
   }
 }
 
