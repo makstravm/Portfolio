@@ -12,9 +12,11 @@
   min-height: 100vh;
   &__inner {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     min-height: 100vh;
+  }
+  &__content{
+    margin-left: 100px;
   }
   &__title {
     @extend %montser-700;
@@ -30,6 +32,7 @@
   &__box-img {
     img {
       height: 65vh;
+      max-height: 750px;
     }
   }
 }

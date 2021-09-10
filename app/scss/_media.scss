@@ -24,10 +24,8 @@
       font-size: 38px;
       line-height: 56px;
     }
-    &__box-img {
-      img {
-        height: 450px;
-      }
+    &__content {
+      margin-left: 65px;
     }
   }
 }
@@ -35,7 +33,11 @@
   .header {
     &__title {
       text-align-last: right;
-      line-height: 42px;
+      font-size: 34px;
+      line-height: 40px;
+    }
+    &__content {
+      margin-left: 35px;
     }
     &__text {
       span {
@@ -99,21 +101,27 @@
 @media (max-width: 670px) {
   .header {
     &__inner {
-      display: block;
+      display: flex;
+      flex-direction: column;
       padding-bottom: 25px;
     }
     &__content {
+      order: 1;
       padding-top: 90px;
+      align-self: flex-end;
+      margin-left: 0;
       span {
-        text-align: left;
+        text-align: right;
         margin-bottom: 5px;
       }
     }
     &__box-img {
-      margin-top: -75px;
+      order: 2;
+      align-self: flex-start;
       img {
         margin-left: auto;
         height: 320px;
+        margin-top: -55px;
       }
     }
   }
